@@ -1,0 +1,49 @@
+class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, var genre: String,
+             var rating: Double, var country: String, var language: String, var episode: Int){
+
+    fun Ratings()
+    {
+
+        if (rating >= 8 && rating <=10)
+        {
+            println("Отличный рейтинг")
+        }
+        if (rating >= 7 && rating <=6)
+        {
+            println("Хороший рейтинг")
+        }
+        if (rating >= 5 && rating <=4)
+        {
+            println("Удовлетворительный рейтинг")
+        }
+        if (rating >= 0 && rating <=3)
+        {
+            println("Плохой рейтинг")
+        }
+        else {
+            println("Неправильный рейтинг")
+        }
+    }
+
+    fun Translation()
+    {
+        if (language == "Русский")
+        {
+            println("Перевод не нужен")
+        }
+        else
+        {
+            println("Необходим перевод")
+        }
+    }
+
+    fun Time()
+    {
+        println("Приблизительное количество времени потраченное на сериал: ${episode*number_of_seasons*40}")
+    }
+
+}
+
+fun main(){
+
+}

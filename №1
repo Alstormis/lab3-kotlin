@@ -1,32 +1,36 @@
 class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, var genre: String,
              var rating: Double, var country: String, var language: String, var episode: Int){
 
-    fun Time_has_passed(){
-        println("Сколько времени пришло с запуска сериала: ${2022-start_year}")
+    fun Description()
+    {
+        println("Название: $name" + "\n" +
+                "Жанр: $genre" + "\n" +
+                "Год начала: $start_year" + "\n" +
+                "Кол-во сезонов: $number_of_seasons" + "\n" +
+                "Кол-во эпизодов: $episode" + "\n" +
+                "Рейтинг: $rating" + "\n" +
+                "Страна: $country" + "\n" +
+                "Язык оригинала: $language"
+        )
     }
 
     fun Ratings()
     {
-
         if (rating >= 8 && rating <=10)
         {
             println("Отличный рейтинг")
         }
-        if (rating <= 7 && rating >=6)
+        if (rating >=6 && rating <= 7.9)
         {
             println("Хороший рейтинг")
         }
-        if (rating <= 5 && rating >=4)
+        if (rating >=4 && rating <= 5.9)
         {
             println("Удовлетворительный рейтинг")
         }
-        if (rating >= 0 && rating <=3)
+        if (rating >= 0 && rating <=3.9)
         {
             println("Плохой рейтинг")
-        }
-        else 
-        {
-            println("Неправильный рейтинг")
         }
     }
 
@@ -42,6 +46,10 @@ class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, 
         }
     }
 
+    fun Time_has_passed(){
+        println("Сколько лет пришло с запуска сериала: ${2022-start_year}" + "\n")
+    }
+
     fun Time()
     {
         println("Приблизительное количество времени потраченное на сериал: ${episode*number_of_seasons*40} минут")
@@ -50,9 +58,25 @@ class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, 
 }
 
 fun main(){
- var ser1 = Serial("Риццоли и Айлс", 2010,7 , "детектив",7.8, "США", "английский", 105)
+    var ser1 = Serial("Риццоли и Айлс", 2010,7 , "детектив",7.8, "США", "Английский", 105)
+    var ser2 = Serial("Метод", 2015,2 , "детектив",8.1, "Россия", "Русский", 32)
+    var ser3 = Serial("В поле зрения", 2011,5 , "детектив",8.0, "США", "Английский", 103)
+    ser1.Description()
     ser1.Ratings()
+    ser1.Translation()
     ser1.Time()
     ser1.Time_has_passed()
-    ser1.Translation()
+
+    ser2.Description()
+    ser2.Translation()
+    ser2.Ratings()
+    ser2.Time()
+    ser2.Time_has_passed()
+
+    ser3.Description()
+    ser3.Translation()
+    ser3.Ratings()
+    ser3.Time()
+    ser3.Time_has_passed()
+
 }

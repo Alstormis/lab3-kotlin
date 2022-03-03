@@ -1,6 +1,13 @@
 class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, var genre: String,
              var rating: Double, var country: String, var language: String, var episode: Int){
 
+    fun Time_has_passed(){
+        println("сколько времени пришло с запуска сериала:")
+        println("${2022-start_year}")
+    }
+    fun Description(){
+        println("Название: $name")
+    }
     fun Ratings()
     {
 

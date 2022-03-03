@@ -2,12 +2,9 @@ class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, 
              var rating: Double, var country: String, var language: String, var episode: Int){
 
     fun Time_has_passed(){
-        println("сколько времени пришло с запуска сериала:")
-        println("${2022-start_year}")
+        println("Сколько времени пришло с запуска сериала: ${2022-start_year}")
     }
-    fun Description(){
-        println("Название: $name")
-    }
+
     fun Ratings()
     {
 
@@ -15,11 +12,11 @@ class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, 
         {
             println("Отличный рейтинг")
         }
-        if (rating >= 7 && rating <=6)
+        if (rating <= 7 && rating >=6)
         {
             println("Хороший рейтинг")
         }
-        if (rating >= 5 && rating <=4)
+        if (rating <= 5 && rating >=4)
         {
             println("Удовлетворительный рейтинг")
         }
@@ -27,7 +24,8 @@ class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, 
         {
             println("Плохой рейтинг")
         }
-        else {
+        else 
+        {
             println("Неправильный рейтинг")
         }
     }
@@ -46,11 +44,15 @@ class Serial(var name: String, var start_year: Int, var number_of_seasons: Int, 
 
     fun Time()
     {
-        println("Приблизительное количество времени потраченное на сериал: ${episode*number_of_seasons*40}")
+        println("Приблизительное количество времени потраченное на сериал: ${episode*number_of_seasons*40} минут")
     }
 
 }
 
 fun main(){
-
+ var ser1 = Serial("Риццоли и Айлс", 2010,7 , "детектив",7.8, "США", "английский", 105)
+    ser1.Ratings()
+    ser1.Time()
+    ser1.Time_has_passed()
+    ser1.Translation()
 }
